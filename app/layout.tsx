@@ -2,7 +2,6 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import Providers from "./providers";
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -10,10 +9,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased bg-black">
-        <Providers >
-          <Navbar />
-          {children}
+      <body>
+        <Providers>
+          <div className="flex min-h-screen flex-col">
+            <Navbar />
+            <main className="flex-1">{children}</main>
+          </div>
         </Providers>
       </body>
     </html>
